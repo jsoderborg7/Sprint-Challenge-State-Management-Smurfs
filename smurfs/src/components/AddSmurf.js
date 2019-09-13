@@ -22,7 +22,7 @@ const AddSmurf = ({ getSmurfs, errors, touched, status }) => {
           className="input"
           type="text"
           name="name"
-          placeholder="Smurf's Name"
+          placeholder="Name"
 
         />
         {touched.name && errors.name && (
@@ -71,14 +71,12 @@ const FormikAddSmurf = withFormik({
     height: Yup.string().required('Please enter height!'),
   }),
 
-  handleSubmit(values, {props, setStatus}) {
+  handleSubmit(values, {setStatus}) {
     axios 
-      .post('http://localhost:3333/smurfs', values)  // ENTER REGISTRATION ENDPOINT
+      .post('http://localhost:3333/smurfs', values)
       .then(res => {
-        console.log('register', res.data)
+        console.log('add', res.data)
         setStatus(res.data)
-        localStorage.setItem(res.token)
-        props.history.push('/smurfs')
       })
       .catch(err => console.log(err.response))
   }

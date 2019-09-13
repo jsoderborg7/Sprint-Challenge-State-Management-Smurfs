@@ -12,6 +12,7 @@
 
 .contentContainer{
   border: 2px solid pink;
+  border-radius: 10px;
   width: 80%;
   margin: auto;
   padding: 5%;
@@ -44,7 +45,11 @@
   width: 100%;
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.addSmurfContainer{
+  margin-top: 5%;
 }
 
 .addForm{
