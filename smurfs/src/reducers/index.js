@@ -26,21 +26,29 @@ export const reducer = (state = initialState, action) =>{
         isFetching: false
       };
 
-    case ADD_SMURF_START:
-      return{
-        ...state,
-        isFetching: true,
-        error: ''
-      };
-
-    case ADD_SMURF_SUCCESS:
-      return{
-        ...state,
-        name: action.payload,
-        isFetching: false
-      };
-
     default: 
       return state;
   }
 };
+
+// export const formReducer = (state = initialState, action) =>{
+//   switch(action.type){
+    
+//     case ADD_SMURF_START:
+//       return{
+//         ...state,
+//         isFetching: true,
+//         error: ''
+//       };
+
+//     case ADD_SMURF_SUCCESS:
+//       return{
+//         ...state,
+//         name: action.payload,
+//         isFetching: false
+//       };
+
+//     default: 
+//       return state;
+//   }
+// };

@@ -5,7 +5,7 @@ import { Form, Field, withFormik } from 'formik';
 
 
 
-const AddSmurf = ({ getSmurfs, errors, touched, status }) => {
+const AddSmurf = ({ errors, touched, status }) => {
   
   const [smurf, setSmurf] = useState([])
   console.log(smurf);
@@ -72,15 +72,15 @@ const FormikAddSmurf = withFormik({
     height: Yup.string().required('Please enter height!'),
   }),
 
-  // handleSubmit(values, {setStatus}) {
-  //   axios 
-  //     .post('http://localhost:3333/smurfs', values)
-  //     .then(res => {
-  //       console.log('add', res.data)
-  //       setStatus(res.data)
-  //     })
-  //     .catch(err => console.log(err.response))
-  // }
+  handleSubmit(values, {setStatus}) {
+    axios 
+      .post('http://localhost:3333/smurfs', values)
+      .then(res => {
+        console.log('add', res.data)
+        setStatus(res.data)
+      })
+      .catch(err => console.log(err.response))
+  }
 })(AddSmurf)
 
 export default FormikAddSmurf;
