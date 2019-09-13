@@ -1,13 +1,17 @@
 import React from "react";
 import Smurfs from './Smurfs';
+import AddSmurf from './AddSmurf';
 import "./App.css";
 
 
 const App = () =>{
   return(
-    <div>
+    <div className="app">
       <h1>Welcome to Smurf Village!</h1>
-      <Smurfs />
+      <div className="mainContent">
+        <Smurfs />
+        <AddSmurf />
+      </div>
     </div>
   );
 }
