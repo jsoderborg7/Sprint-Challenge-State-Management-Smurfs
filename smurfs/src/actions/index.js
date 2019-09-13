@@ -21,15 +21,15 @@ export const getSmurfs = () => dispatch =>{
     });
 };
 
-export const addSmurf = () dispatch =>{
-  dispatch({type: ADD_SMURF_START});
-  axios
-    .post('http://localhost:3333/smurfs')
-    .then(res =>{
-      console.log('add res', res);
-      dispatch({type: ADD_SMURF_SUCCESS, payload: res.data});
-    })
-    .catch(err =>{
-      ({type: ADD_SMURF_FAILURE, payload: `${err.response}`})
-    });
-};
+// export const addSmurf = () => dispatch =>{
+//   dispatch({type: ADD_SMURF_START});
+//   axios
+//     .post('http://localhost:3333/smurfs')
+//     .then(res =>{
+//       console.log('add res', res);
+//       dispatch({type: ADD_SMURF_SUCCESS, payload: res.data});
+//     })
+//     .catch(err =>{
+//       ({type: ADD_SMURF_FAILURE, payload: `${err.response}`})
+//     });
+// };
